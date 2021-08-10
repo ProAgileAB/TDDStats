@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pages_background" v-on:click="nextState">
     <h1>Current state:</h1>
     <p>{{ state }}</p>
     <!--  <Session v-if="state === SESSION"/>-->
@@ -10,32 +10,29 @@
 
 <script>
 const SPLASH = "SPLASH"
-// const SESSION = "SESSION"
-// const RESULT = "RESULT"
+const SESSION = "SESSION"
+const RESULT = "RESULT"
+const STATE_ORDER = [SPLASH, SESSION, RESULT]
 
 export default {
-  name: 'Pages',
-  data: function() {
+  name: "Pages",
+  data: function () {
     return {
       state: SPLASH
+    }
+  },
+  methods: {
+    nextState: function () {
+      var currIndex = STATE_ORDER.indexOf(this.state)
+      var newIndex = (currIndex + 1) % STATE_ORDER.length
+      this.state = STATE_ORDER[newIndex]
     }
   }
 }
 </script>
 
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.pages_background {
+  background-color: aliceblue;
 }
 </style>
