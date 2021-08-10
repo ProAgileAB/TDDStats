@@ -11,6 +11,7 @@ on:
 
 jobs:
   build:
+    environment: tddstats_deploy
 
     runs-on: ubuntu-latest
 
