@@ -1,8 +1,8 @@
 <template>
   <div class="pages_background">
-<!--    <p>{{ state }}</p>-->
+    <p>{{ state }}</p>
     <Splash v-if="inSplash" @start-session="nextState"/>
-    <!--  <Session v-if="state === SESSION"/>-->
+    <Session v-if="inSession" @end-session="nextState"/>
     <!--  <Result v-if="state === RESULT"/>-->
   </div>
 </template>
@@ -10,6 +10,7 @@
 <script>
 
 import Splash from './Splash.vue'
+import Session from './Session.vue'
 
 const SPLASH = 'SPLASH'
 const SESSION = 'SESSION'
@@ -19,7 +20,7 @@ const STATE_ORDER = [SPLASH, SESSION, RESULT]
 export default {
   name: 'Pages',
   components: {
-    Splash
+    Splash, Session
   },
   data: function () {
     return {
@@ -29,6 +30,9 @@ export default {
   computed: {
     inSplash: function() {
       return this.state === SPLASH
+    },
+    inSession: function() {
+      return this.state === SESSION
     }
   },
   methods: {
