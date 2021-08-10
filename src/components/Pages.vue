@@ -3,7 +3,7 @@
     <p>{{ state }}</p>
     <Splash v-if="inSplash" @start-session="nextState"/>
     <Session v-if="inSession" @end-session="nextState"/>
-    <!--  <Result v-if="state === RESULT"/>-->
+    <Summary v-if="inSummary" @exit-session="nextState"/>
   </div>
 </template>
 
@@ -11,16 +11,17 @@
 
 import Splash from './Splash.vue'
 import Session from './Session.vue'
+import Summary from './Summary.vue'
 
 const SPLASH = 'SPLASH'
 const SESSION = 'SESSION'
-const RESULT = 'RESULT'
-const STATE_ORDER = [SPLASH, SESSION, RESULT]
+const SUMMARY = 'RESULT'
+const FLOW = [SPLASH, SESSION, SUMMARY]
 
 export default {
   name: 'Pages',
   components: {
-    Splash, Session
+    Splash, Session, Summary
   },
   data: function () {
     return {
@@ -33,13 +34,16 @@ export default {
     },
     inSession: function() {
       return this.state === SESSION
+    },
+    inSummary: function() {
+      return this.state === SUMMARY
     }
   },
   methods: {
     nextState: function () {
-      var currIndex = STATE_ORDER.indexOf(this.state)
-      var newIndex = (currIndex + 1) % STATE_ORDER.length
-      this.state = STATE_ORDER[newIndex]
+      var currIndex = FLOW.indexOf(this.state)
+      var newIndex = (currIndex + 1) % FLOW.length
+      this.state = FLOW[newIndex]
     }
   }
 }
