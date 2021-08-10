@@ -1,9 +1,9 @@
 <template>
   <div class="pages_background">
-    <p>{{ state }}</p>
+<!--    <p>{{ state }}</p>-->
+    <Splash v-if="inSplash" @start-session="nextState"/>
     <!--  <Session v-if="state === SESSION"/>-->
     <!--  <Result v-if="state === RESULT"/>-->
-    <Splash v-if="inSplash" @start-session="nextState"/>
   </div>
 </template>
 
