@@ -1,23 +1,34 @@
 <template>
-  <div class="pages_background" v-on:click="nextState">
+  <div class="pages_background">
     <p>{{ state }}</p>
     <!--  <Session v-if="state === SESSION"/>-->
     <!--  <Result v-if="state === RESULT"/>-->
-    <!--  <Splash v-if="state === SPLASH"/>-->
+    <Splash v-if="inSplash" @start-session="nextState"/>
   </div>
 </template>
 
 <script>
-const SPLASH = "SPLASH"
-const SESSION = "SESSION"
-const RESULT = "RESULT"
+
+import Splash from './Splash.vue'
+
+const SPLASH = 'SPLASH'
+const SESSION = 'SESSION'
+const RESULT = 'RESULT'
 const STATE_ORDER = [SPLASH, SESSION, RESULT]
 
 export default {
-  name: "Pages",
+  name: 'Pages',
+  components: {
+    Splash
+  },
   data: function () {
     return {
-      state: SPLASH
+      state: SPLASH,
+    }
+  },
+  computed: {
+    inSplash: function() {
+      return this.state === SPLASH
     }
   },
   methods: {

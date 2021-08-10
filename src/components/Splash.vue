@@ -1,0 +1,21 @@
+<template>
+  <div class="splash_background">
+    <h1>TDD Stats app</h1>
+    <p>Keep track of what TDD state you are in,
+      and see how much time you spend in each!</p>
+    <button v-on:click="$emit('start-session')">Start session</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Splash",
+}
+</script>
+
+<style scoped>
+.splash_background {
+  background-color: deepskyblue;
+  padding: 10px;
+}
+</style>
