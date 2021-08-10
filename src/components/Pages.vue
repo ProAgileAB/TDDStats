@@ -1,6 +1,5 @@
 <template>
   <div class="pages_background" v-on:click="nextState">
-    <h1>Current state:</h1>
     <p>{{ state }}</p>
     <!--  <Session v-if="state === SESSION"/>-->
     <!--  <Result v-if="state === RESULT"/>-->
@@ -34,5 +33,9 @@ export default {
 <style scoped>
 .pages_background {
   background-color: aliceblue;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
 }
 </style>
