@@ -5,22 +5,21 @@ function summaryFromTimelog(timestamps) {
     let inBlue = 0, inRed = 0, inGreen = 0;
     for (let i = 0; i < noCycles; i++) {
         const offset = i * 3;
-        inBlue = inBlue + seconds[offset + 1] - seconds[offset]
-        inRed = inRed + seconds[offset + 2] - seconds[offset + 1]
-        inGreen = inGreen + seconds[offset + 3] - seconds[offset + 2]
+        let delta = add => seconds[offset + add + 1] - seconds[offset + add]
+        inBlue = inBlue + delta(0)
+        inRed = inRed + delta(1)
+        inGreen = inGreen + delta(2)
     }
-    let bluePercent = inBlue * 100 / total
-    let redPercent = inRed * 100 / total
-    let greenPercent = inGreen * 100 / total
+    let percent = s => Math.round(s * 100 / total)
     return {
         totalTime: total,
         timeInBlue: inBlue,
         timeInRed: inRed,
         timeInGreen: inGreen,
         noCycles: noCycles,
-        percentBlue: Math.round(bluePercent),
-        percentRed: Math.round(redPercent),
-        percentGreen: Math.round(greenPercent)
+        percentBlue: percent(inBlue),
+        percentRed: percent(inRed),
+        percentGreen: percent(inGreen)
     }
 }
 
