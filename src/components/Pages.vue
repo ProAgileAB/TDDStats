@@ -1,46 +1,65 @@
 <template>
   <div class="pages_background">
-    <Splash v-if="page === 'SPLASH'" @start-session="nextPage"/>
-    <Session v-if="page === 'SESSION'" @end-session="nextPage"/>
-    <Summary v-if="page === 'SUMMARY'" @exit-session="nextPage"/>
+    <Splash v-if="page === 'SPLASH'" @start-session="nextPage" />
+    <Session v-if="page === 'SESSION'" @end-session="nextPage" />
+    <Summary v-if="page === 'SUMMARY'" @exit-session="nextPage" />
   </div>
 </template>
 
 <script>
+import Splash from "./Splash.vue";
+import Session from "./Session.vue";
+import Summary from "./Summary.vue";
 
-import Splash from './Splash.vue'
-import Session from './Session.vue'
-import Summary from './Summary.vue'
-
-const FLOW = ['SPLASH', 'SESSION', 'SUMMARY']
+const FLOW = ["SPLASH", "SESSION", "SUMMARY"];
 
 export default {
-  name: 'Pages',
+  name: "Pages",
   components: {
-    Splash, Session, Summary
+    Splash,
+    Session,
+    Summary
   },
-  data: function () {
+  data: function() {
     return {
-      page: 'SPLASH',
-    }
+      page: "SPLASH"
+    };
   },
   methods: {
-    nextPage: function () {
-      var currIndex = FLOW.indexOf(this.page)
-      var newIndex = (currIndex + 1) % FLOW.length
-      this.page = FLOW[newIndex]
+    nextPage: function() {
+      var currIndex = FLOW.indexOf(this.page);
+      var newIndex = (currIndex + 1) % FLOW.length;
+      this.page = FLOW[newIndex];
     }
   }
-}
+};
 </script>
 
-<style scoped>
+<style>
 .pages_background {
   background-color: aliceblue;
   border-color: black;
   border-style: solid;
   border-width: 1px;
-  height: 80vh;
+  height: 94vh;
   padding: 10px;
+}
+
+.button {
+  font-size: 1.6rem;
+  vertical-align: bottom;
+  height: 5rem;
+  border: 1px solid #000;
+  border-radius: 20px;
+  box-shadow: 4px 2px 2px #ccc;
+  background-color: #09cdda;
+}
+
+.page {
+  height: 100%;
+}
+
+.section {
+  height: 80%;
 }
 </style>
