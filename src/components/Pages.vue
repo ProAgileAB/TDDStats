@@ -1,6 +1,5 @@
 <template>
   <div class="pages_background">
-    <p>{{ state }}</p>
     <Splash v-if="inSplash" @start-session="nextState"/>
     <Session v-if="inSession" @end-session="nextState"/>
     <Summary v-if="inSummary" @exit-session="nextState"/>
@@ -55,6 +54,7 @@ export default {
   border-color: black;
   border-style: solid;
   border-width: 1px;
+  height: 80vh;
   padding: 10px;
 }
 </style>

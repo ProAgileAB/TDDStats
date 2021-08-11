@@ -2,7 +2,7 @@
   <div class="session_background">
     <h1>TDD session active</h1>
     <p>Current state: BLUE</p>
-    <button v-on:click="$emit('end-session')">End session</button>
+    <button class="button" v-on:click="$emit('end-session')">End session</button>
   </div>
 </template>
 
@@ -13,6 +13,7 @@ export default {
 </script>
 
 <style scoped>
+@import './button.css';
 .session_background {
   background-color: rosybrown;
   padding: 10px;

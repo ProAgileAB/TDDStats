@@ -3,7 +3,7 @@
     <h1>TDD Stats app</h1>
     <p>Keep track of what TDD state you are in,
       and see how much time you spend in each!</p>
-    <button v-on:click="$emit('start-session')">Start session</button>
+    <button class="button" v-on:click="$emit('start-session')">Start session</button>
   </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
 </script>
 
 <style scoped>
+@import './button.css';
 .splash_background {
   background-color: deepskyblue;
   padding: 10px;
