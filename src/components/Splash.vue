@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <h1>TDD Stats app</h1>
     <p>Keep track of what TDD state you are in,
       and see how much time you spend in each!</p>
@@ -14,5 +14,6 @@ export default {
 </script>
 
 <style scoped>
+@import './page.css';
 @import './button.css';
 </style>
