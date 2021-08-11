@@ -1,8 +1,8 @@
 <template>
   <div class="pages_background">
-    <Splash v-if="inSplash" @start-session="nextState"/>
-    <Session v-if="inSession" @end-session="nextState"/>
-    <Summary v-if="inSummary" @exit-session="nextState"/>
+    <Splash v-if="state === 'SPLASH'" @start-session="nextState"/>
+    <Session v-if="state === 'SESSION'" @end-session="nextState"/>
+    <Summary v-if="state === 'SUMMARY'" @exit-session="nextState"/>
   </div>
 </template>
 
@@ -12,10 +12,7 @@ import Splash from './Splash.vue'
 import Session from './Session.vue'
 import Summary from './Summary.vue'
 
-const SPLASH = 'SPLASH'
-const SESSION = 'SESSION'
-const SUMMARY = 'RESULT'
-const FLOW = [SPLASH, SESSION, SUMMARY]
+const FLOW = ['SPLASH', 'SESSION', 'SUMMARY']
 
 export default {
   name: 'Pages',
@@ -24,18 +21,7 @@ export default {
   },
   data: function () {
     return {
-      state: SPLASH,
-    }
-  },
-  computed: {
-    inSplash: function() {
-      return this.state === SPLASH
-    },
-    inSession: function() {
-      return this.state === SESSION
-    },
-    inSummary: function() {
-      return this.state === SUMMARY
+      state: 'SPLASH',
     }
   },
   methods: {
