@@ -31,7 +31,7 @@ export default {
   data: function() {
     return {
       state: STATES[0],
-      timeStampsMs: [],
+      timeStampsMs: [Date.now()],
       noCycles: 0
     };
   },

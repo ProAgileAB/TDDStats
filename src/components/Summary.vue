@@ -1,8 +1,6 @@
 <template>
   <div class="page">
     <div class="section">
-      {{ summary }}
-      {{ session }}
       <h1>Session summary</h1>
       <p>Total time: {{ summary.totalTime }} s</p>
       <p>Adding tests (BLUE): {{ summary.percentBlue }}% of time ({{ summary.timeInBlue }} s)</p>

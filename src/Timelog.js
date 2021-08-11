@@ -11,12 +11,13 @@ function summaryFromTimelog(timestamps) {
         inGreen = inGreen + delta(2)
     }
     let r = Math.round
+    let oneDecimal = v => r(v*10) / 10
     let percent = s => r(s * 100 / total)
     return {
-        totalTime: r(total),
-        timeInBlue: r(inBlue),
-        timeInRed: r(inRed),
-        timeInGreen: r(inGreen),
+        totalTime: oneDecimal(total),
+        timeInBlue: oneDecimal(inBlue),
+        timeInRed: oneDecimal(inRed),
+        timeInGreen: oneDecimal(inGreen),
         noCycles: noCycles,
         percentBlue: percent(inBlue),
         percentRed: percent(inRed),
