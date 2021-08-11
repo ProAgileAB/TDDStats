@@ -38,4 +38,16 @@ describe('summaryData', () => {
     expect(summary.percentRed).toBe(25)
     expect(summary.percentGreen).toBe(25)
   })
+  it("handles regression data well", () => {
+    let summary = Timelog.summaryFromTimelog(
+        [ 1628697931346, 1628697933186, 1628697934827, 1628697935658 ])
+    expect(summary.totalTime).toBe(4)
+    expect(summary.noCycles).toBe(1)
+    expect(summary.timeInBlue).toBe(2)
+    expect(summary.timeInRed).toBe(2)
+    expect(summary.timeInGreen).toBe(1)
+    expect(summary.percentBlue).toBe(43)
+    expect(summary.percentRed).toBe(38)
+    expect(summary.percentGreen).toBe(19)
+  })
 })

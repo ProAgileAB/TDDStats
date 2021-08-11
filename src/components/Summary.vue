@@ -5,9 +5,9 @@
       {{ session }}
       <h1>Session summary</h1>
       <p>Total time: {{ summary.totalTime }} s</p>
-      <p>Adding tests (BLUE): 33% of time (66 s)</p>
-      <p>Making them pass (RED): 50% of time (100 s)</p>
-      <p>Refactoring (GREEN): 17% of time (34 s)</p>
+      <p>Adding tests (BLUE): {{ summary.percentBlue }}% of time ({{ summary.timeInBlue }} s)</p>
+      <p>Making them pass (RED): {{ summary.percentRed }}% of time ({{ summary.timeInRed }} s)</p>
+      <p>Refactoring (GREEN): {{ summary.percentGreen }}% of time ({{ summary.timeInGreen }} s)</p>
     </div>
     <button class="button" v-on:click="$emit('exit-session')">
       Exit session

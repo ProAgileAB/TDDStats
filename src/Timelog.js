@@ -1,5 +1,5 @@
 function summaryFromTimelog(timestamps) {
-    let seconds = timestamps.map(ms => Math.round(ms / 1000))
+    let seconds = timestamps.map(ms => ms / 1000)
     let total = seconds[seconds.length - 1] - seconds[0]
     let noCycles = (seconds.length - 1) / 3
     let inBlue = 0, inRed = 0, inGreen = 0;
@@ -10,12 +10,13 @@ function summaryFromTimelog(timestamps) {
         inRed = inRed + delta(1)
         inGreen = inGreen + delta(2)
     }
-    let percent = s => Math.round(s * 100 / total)
+    let r = Math.round
+    let percent = s => r(s * 100 / total)
     return {
-        totalTime: total,
-        timeInBlue: inBlue,
-        timeInRed: inRed,
-        timeInGreen: inGreen,
+        totalTime: r(total),
+        timeInBlue: r(inBlue),
+        timeInRed: r(inRed),
+        timeInGreen: r(inGreen),
         noCycles: noCycles,
         percentBlue: percent(inBlue),
         percentRed: percent(inRed),
