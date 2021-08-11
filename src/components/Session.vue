@@ -16,7 +16,7 @@
     <button
       :disabled="state !== 'BLUE'"
       class="button"
-      v-on:click="$emit('end-session')"
+      v-on:click="endSession"
     >
       End session
     </button>
@@ -31,6 +31,7 @@ export default {
   data: function() {
     return {
       state: STATES[0],
+      timeStampsMs: [],
       noCycles: 0
     };
   },
@@ -39,9 +40,15 @@ export default {
       var currState = STATES.indexOf(this.state);
       var nextState = (currState + 1) % STATES.length;
       this.state = STATES[nextState];
+      this.timeStampsMs.push(Date.now())
       if (nextState === 0) {
         this.noCycles++;
       }
+    },
+    endSession: function() {
+      this.$emit('end-session', {
+        timeStampsMs: this.timeStampsMs
+      })
     }
   }
 };

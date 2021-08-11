@@ -1,8 +1,8 @@
 <template>
   <div class="pages_background">
     <Splash v-if="page === 'SPLASH'" @start-session="nextPage" />
-    <Session v-if="page === 'SESSION'" @end-session="nextPage" />
-    <Summary v-if="page === 'SUMMARY'" @exit-session="nextPage" />
+    <Session v-if="page === 'SESSION'" @end-session="sessionEnded" />
+    <Summary v-if="page === 'SUMMARY'" @exit-session="nextPage" v-bind:session='session' />
   </div>
 </template>
 
@@ -22,7 +22,8 @@ export default {
   },
   data: function() {
     return {
-      page: "SPLASH"
+      page: "SPLASH",
+      session: null
     };
   },
   methods: {
@@ -30,6 +31,10 @@ export default {
       var currIndex = FLOW.indexOf(this.page);
       var newIndex = (currIndex + 1) % FLOW.length;
       this.page = FLOW[newIndex];
+    },
+    sessionEnded: function(session) {
+      this.session = session
+      this.nextPage()
     }
   }
 };
