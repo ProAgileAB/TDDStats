@@ -1,5 +1,5 @@
 <template>
-  <div class="session_background" v-on:click="nextState">
+  <div v-on:click="nextState">
     <h1>TDD session active</h1>
     <p>Current state: {{ state }}</p>
     <button class="button" v-on:click="$emit('end-session')">End session</button>
@@ -29,8 +29,4 @@ export default {
 
 <style scoped>
 @import './button.css';
-.session_background {
-  background-color: rosybrown;
-  padding: 10px;
-}
 </style>
