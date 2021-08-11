@@ -23,5 +23,4 @@ function summaryFromTimelog(timestamps) {
     }
 }
 
-
-export default {summaryFromTimelog};
+export default {summaryFromTimelog}
