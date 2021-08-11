@@ -1,5 +1,5 @@
 function summaryFromTimelog(timestamps) {
-    let seconds = timestamps.map(ms => ms / 1000)
+    let seconds = timestamps.map(ms => Math.round(ms / 1000))
     let total = seconds[seconds.length - 1] - seconds[0]
     let noCycles = (seconds.length - 1) / 3
     let inBlue = 0, inRed = 0, inGreen = 0;
