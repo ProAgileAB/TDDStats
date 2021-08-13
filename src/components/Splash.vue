@@ -32,6 +32,9 @@ export default {
 </script>
 
 <style>
+ul  {
+  list-style: none
+}
 li {
   font-size: x-large;
 }
