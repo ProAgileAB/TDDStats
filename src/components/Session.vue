@@ -3,13 +3,13 @@
     <div class="section">
       <h1 class="page_title">In session</h1>
       <p class="state blue" v-bind:class="{ active: state === 'BLUE' }">
-        Add a test
+        🦊 Add a test
       </p>
       <p class="state red" v-bind:class="{ active: state === 'RED' }">
-        Make it pass
+        🐇 Make it pass
       </p>
       <p class="state green" v-bind:class="{ active: state === 'GREEN' }">
-        Refactor
+        🐈 Refactor
       </p>
       <p>Tap anywhere switch state</p>
       <p>Number of cycles: {{ noCycles }}</p>
@@ -68,7 +68,6 @@ export default {
 }
 .active {
   font-size: xx-large;
-  font-style: oblique;
   border: 2px solid #09cdda;
 }
 .state {
