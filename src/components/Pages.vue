@@ -69,11 +69,11 @@ export default {
 }
 
 .page_title {
-  font-size: xxx-large;
+  font-size: 5vh;
 }
 
 .infotext {
-  font-size: xx-large;
+  font-size: 2vh;
 }
 
 </style>
