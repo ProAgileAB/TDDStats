@@ -1,16 +1,17 @@
 <template>
   <div class="page" v-on:click="nextState">
     <div class="section">
-      <h1>In session</h1>
-      <p class="STATE BLUE" v-bind:class="{ ACTIVE: state === 'BLUE' }">
+      <h1 class="page_title">In session</h1>
+      <p class="state blue" v-bind:class="{ active: state === 'BLUE' }">
         Add a test
       </p>
-      <p class="STATE RED" v-bind:class="{ ACTIVE: state === 'RED' }">
+      <p class="state red" v-bind:class="{ active: state === 'RED' }">
         Make it pass
       </p>
-      <p class="STATE GREEN" v-bind:class="{ ACTIVE: state === 'GREEN' }">
+      <p class="state green" v-bind:class="{ active: state === 'GREEN' }">
         Refactor
       </p>
+      <p>Tap anywhere switch state</p>
       <p>Number of cycles: {{ noCycles }}</p>
     </div>
     <button
@@ -55,24 +56,26 @@ export default {
 </script>
 
 <style scoped>
-.BLUE {
+.blue {
   background-color: lightblue;
   border-width: 2px;
 }
-.RED {
+.red {
   background-color: lightcoral;
 }
-.GREEN {
+.green {
   background-color: lightgreen;
 }
-.ACTIVE {
+.active {
   font-size: xx-large;
-  height: 18vh;
+  font-style: oblique;
+  border: 2px solid #09cdda;
 }
-.STATE {
-  line-height: 10vh;
+.state {
+  line-height: 11vh;
+  height: 11vh;
+  border-radius: 40px;
   width: 80%;
   margin: auto;
-  height: 10vh;
 }
 </style>

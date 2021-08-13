@@ -1,8 +1,8 @@
 <template>
   <div class="page">
     <div class="section">
-      <h1>TDD Stats app</h1>
-      <p>
+      <h1 class="page_title">TDD Stats app</h1>
+      <p class="infotext">
         Keep track of what TDD state you are in, and see how much time you spend
         in each!
       </p>

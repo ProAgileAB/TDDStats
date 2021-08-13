@@ -41,6 +41,7 @@ export default {
 </script>
 
 <style>
+
 .pages_background {
   background-color: aliceblue;
   border-color: black;
@@ -52,7 +53,6 @@ export default {
 
 .button {
   font-size: 1.6rem;
-  vertical-align: bottom;
   height: 5rem;
   border: 1px solid #000;
   border-radius: 20px;
@@ -67,4 +67,13 @@ export default {
 .section {
   height: 80%;
 }
+
+.page_title {
+  font-size: xxx-large;
+}
+
+.infotext {
+  font-size: xx-large;
+}
+
 </style>
