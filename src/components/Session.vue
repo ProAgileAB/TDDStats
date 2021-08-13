@@ -71,6 +71,7 @@ export default {
   border: 2px solid #09cdda;
 }
 .state {
+  transition: 0.1s;
   line-height: 11vh;
   height: 11vh;
   border-radius: 40px;
