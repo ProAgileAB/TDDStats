@@ -47,7 +47,7 @@ export default {
   border-color: black;
   border-style: solid;
   border-width: 1px;
-  height: 94vh;
+  min-height: 94vh;
   padding: 10px;
 }
 
