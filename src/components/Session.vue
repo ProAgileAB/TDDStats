@@ -2,13 +2,13 @@
   <div class="page" v-on:click="nextState">
     <div class="section">
       <h1 class="page_title">In session</h1>
-      <p class="state blue" v-bind:class="{ active: state === 'BLUE' }">
+      <p class="state blue" v-bind:class="{ 'active activeblue': state === 'BLUE' }">
         🦊 Add a test
       </p>
-      <p class="state red" v-bind:class="{ active: state === 'RED' }">
+      <p class="state red" v-bind:class="{ 'active activered': state === 'RED' }">
         🐇 Make it pass
       </p>
-      <p class="state green" v-bind:class="{ active: state === 'GREEN' }">
+      <p class="state green" v-bind:class="{ 'active activegreen': state === 'GREEN' }">
         🐈 Refactor
       </p>
       <p>Tap anywhere switch state</p>
@@ -56,9 +56,18 @@ export default {
 </script>
 
 <style scoped>
+.state {
+  line-height: 11vh;
+  height: 11vh;
+  border-radius: 40px;
+  width: 80%;
+  margin: auto;
+}
+.active {
+  font-size: xx-large;
+}
 .blue {
   background-color: lightblue;
-  border-width: 2px;
 }
 .red {
   background-color: lightcoral;
@@ -66,15 +75,13 @@ export default {
 .green {
   background-color: lightgreen;
 }
-.active {
-  font-size: xx-large;
-  border: 2px solid #09cdda;
+.activeblue {
+  border: 5px solid darkblue;
 }
-.state {
-  line-height: 11vh;
-  height: 11vh;
-  border-radius: 40px;
-  width: 80%;
-  margin: auto;
+.activered {
+  border: 5px solid darkred;
+}
+.activegreen {
+  border: 5px solid darkgreen;
 }
 </style>
