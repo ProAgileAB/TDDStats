@@ -5,7 +5,7 @@
       <p class="infotext">
         Keep track of what TDD state you are in!
       </p>
-      <p class="infotext">The TDD mindsets</p>
+      <p class="infotext">🎗 The TDD mindsets 🎗</p>
       <ul>
         <li>
           🦊 In blue state, the fox says "You are not done yet, add another test!"
@@ -36,6 +36,7 @@ ul  {
   list-style: none
 }
 li {
-  font-size: x-large;
+  font-size: 2vh;
+  margin: 1vh;
 }
 </style>

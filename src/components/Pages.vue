@@ -47,7 +47,7 @@ export default {
   border-color: black;
   border-style: solid;
   border-width: 1px;
-  height: 94vh;
+  min-height: 94vh;
   padding: 10px;
 }
 
@@ -69,11 +69,11 @@ export default {
 }
 
 .page_title {
-  font-size: xxx-large;
+  font-size: 5vh;
 }
 
 .infotext {
-  font-size: xx-large;
+  font-size: 2vh;
 }
 
 </style>

@@ -11,8 +11,8 @@
       <p class="state green" v-bind:class="{ 'active activegreen': state === 'GREEN' }">
         🐈 Refactor
       </p>
-      <p>Tap anywhere switch state</p>
-      <p>Number of cycles: {{ noCycles }}</p>
+      <p class="infotext">Tap anywhere switch state</p>
+      <p class="infotext">Number of cycles: {{ noCycles }}</p>
     </div>
     <button
       :disabled="state !== 'BLUE'"
@@ -57,11 +57,14 @@ export default {
 
 <style scoped>
 .state {
-  line-height: 11vh;
-  height: 11vh;
-  border-radius: 40px;
+  transition: 0.1s;
+  line-height: 15vh;
+  height: 15vh;
+  border-radius: 20px;
   width: 80%;
   margin: auto;
+  padding: 2vh;
+  font-size: 2vh;
 }
 .active {
   font-size: xx-large;
