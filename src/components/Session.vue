@@ -15,7 +15,7 @@
       <p class="infotext">Number of cycles: {{ noCycles }}</p>
     </div>
     <button
-      :disabled="state !== 'BLUE'"
+      :disabled="state !== 'BLUE' || noCycles === 0"
       class="button"
       v-on:click="endSession"
     >
