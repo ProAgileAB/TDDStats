@@ -2,6 +2,7 @@
   <div class="page">
     <div class="section">
       <h1 class="page_title">Session summary</h1>
+      <p class="infotext">Number of Cycles: {{ summary.noCycles }}</p>
       <p class="infotext">Total time: {{ summary.totalTime }} s</p>
       <p class="infotext">Adding tests (BLUE): {{ summary.percentBlue }}% of time ({{ summary.timeInBlue }} s)</p>
       <p class="infotext">Making them pass (RED): {{ summary.percentRed }}% of time ({{ summary.timeInRed }} s)</p>
