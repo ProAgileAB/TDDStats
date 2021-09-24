@@ -57,7 +57,7 @@ export default {
 
 <style scoped>
 .state {
-  transition: 0.1s;
+  transition: 0.1s; /*hej*/
   line-height: 15vh;
   height: 15vh;
   border-radius: 20px;
@@ -65,6 +65,7 @@ export default {
   margin: auto;
   padding: 2vh;
   font-size: 2vh;
+  user-select: none;
 }
 .active {
   font-size: xx-large;
