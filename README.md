@@ -20,5 +20,10 @@ npm run build
 npm run lint
 ```
 
+### Deploy files to S3
+```
+npm run deploy
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
