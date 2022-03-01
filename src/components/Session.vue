@@ -3,13 +3,13 @@
     <div class="section">
       <h1 class="page_title">In session</h1>
       <p class="state blue" v-bind:class="{ 'active activeblue': state === 'BLUE' }">
-        🦊 Add a test
+        🦊 Add a test and watch it fail
       </p>
       <p class="state red" v-bind:class="{ 'active activered': state === 'RED' }">
-        🐇 Make it pass
+        🐇 Make it pass as soon as possible
       </p>
       <p class="state green" v-bind:class="{ 'active activegreen': state === 'GREEN' }">
-        🐈 Refactor
+        🐈 Refactor to your delight
       </p>
       <p class="infotext">Tap anywhere switch state</p>
       <p class="infotext">Number of cycles: {{ noCycles }}</p>
